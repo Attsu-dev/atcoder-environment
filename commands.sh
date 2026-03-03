@@ -1,8 +1,10 @@
 alias g='g++ -std=c++23 -I ~/atcoder/ac-library -g -Wall -Wextra -Wshadow -fsanitize=address,undefined'
 
-function atcoder-start() {
-    acc n "$1"
-    cd "$1/a/" || return
+function n() {
+    cd /home/attsu/atcoder/workspace || return
+    cp /home/attsu/atcoder/library/template.cpp main.cpp
+    rm test -r
+    oj d "$1"
     code --goto main.cpp:6:3
 }
 
@@ -10,6 +12,12 @@ function t() {
     cat main.cpp | clip.exe
     g main.cpp || return
     oj t
+}
+
+function atcoder-start() {
+    acc n "$1"
+    cd "$1/a/" || return
+    code --goto main.cpp:6:3
 }
 
 function to() {
