@@ -16,3 +16,20 @@ function to() {
     cd "../$1/" || return
     code --goto main.cpp:6:3
 }
+
+function save_lib() {
+    local lib_path="/home/attsu/atcoder/library"
+    local snippet_dest="/mnt/c/Users/atsus/AppData/Roaming/Code/User/snippets/cpp.json"
+
+    cp "$lib_path/snippets.json" "$snippet_dest"
+    echo "スニペットを適用したよ！"
+
+    pushd "$lib_path" > /dev/null || return 1
+
+    git add .
+    git commit -m "update"
+    git push origin main
+
+    popd > /dev/null
+    echo "ライブラリをGitHubにpushしたよ！"
+}
