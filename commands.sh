@@ -1,4 +1,4 @@
-alias g='g++ -std=c++23 -I ~/atcoder/ac-library'
+alias g='g++ -std=c++23 -I ~/atcoder/ac-library -g -Wall -Wextra -Wshadow -fsanitize=address,undefined'
 
 function atcoder_start() {
     acc n "$1"
@@ -22,7 +22,6 @@ function save_lib() {
     local snippet_dest="/mnt/c/Users/atsus/AppData/Roaming/Code/User/snippets/cpp.json"
 
     cp "$lib_path/snippets.json" "$snippet_dest"
-    echo "スニペットを適用したよ！"
 
     pushd "$lib_path" > /dev/null || return 1
 
@@ -31,5 +30,4 @@ function save_lib() {
     git push origin main
 
     popd > /dev/null
-    echo "ライブラリをGitHubにpushしたよ！"
 }
