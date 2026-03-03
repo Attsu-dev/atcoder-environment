@@ -1,0 +1,14 @@
+{
+    "桁和関数": {
+        "prefix": "ketawa",
+        "body": [
+            "ll ketawa(ll x) {",
+            "  string s = to_string(x);",
+            "  ll res = 0;",
+            "  for (char c : s) res += c - '0';",
+            "  return res;",
+            "}"
+        ],
+        "description": "整数xを10進数表記したときの各桁の和を返す"
+    }
+}
