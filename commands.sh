@@ -1,6 +1,6 @@
 alias g='g++ -std=c++23 -I ~/atcoder/ac-library -g -Wall -Wextra -Wshadow -fsanitize=address,undefined'
 
-function atcoder_start() {
+function atcoder-start() {
     acc n "$1"
     cd "$1/a/" || return
     code --goto main.cpp:6:3
@@ -17,7 +17,7 @@ function to() {
     code --goto main.cpp:6:3
 }
 
-function save_lib() {
+function save-lib() {
     local lib_path="/home/attsu/atcoder/library"
     local snippet_dest="/mnt/c/Users/atsus/AppData/Roaming/Code/User/snippets/cpp.json"
 
