@@ -2,9 +2,7 @@
 #include <bits/stdc++.h>
 #include __FILE__
 
-void solve() {
-  
-}
+void solve() {}
 
 int main() {
   int T = 1;
@@ -15,9 +13,7 @@ int main() {
 }
 
 #else
-#include <atcoder/all>
 using namespace std;
-using namespace atcoder;
 struct Init {
   Init() {
     ios::sync_with_stdio(0);

@@ -1,4 +1,11 @@
 {
+    "ac-libraryのインクルード": {
+        "prefix": "atcoder",
+        "body": [
+            "#include <atcoder/all>",
+            "using namespace atcoder;"
+        ]
+    },
     "桁和関数": {
         "prefix": "ketawa",
         "body": [
