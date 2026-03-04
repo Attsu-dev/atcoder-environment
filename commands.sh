@@ -9,7 +9,7 @@ function n() {
 }
 
 function t() {
-    cat main.cpp | clip.exe
+    cat main.cpp | iconv -t sjis | clip.exe
     g main.cpp || return
     oj t
 }
