@@ -3,9 +3,16 @@ alias g='g++ -std=c++23 -I ~/atcoder/ac-library -g -Wall -Wextra -Wshadow -fsani
 function n() {
     cd /home/attsu/atcoder/workspace || return
     cp /home/attsu/atcoder/library/template.cpp main.cpp
-    rm test -r
+    rm -r test 2>/dev/null
+
+    echo "$1" > .problem_url
+
     oj d "$1"
     code --goto main.cpp:6:3
+}
+
+function open-problem() {
+    xdg-open "$(cat .problem_url)"
 }
 
 function t() {
