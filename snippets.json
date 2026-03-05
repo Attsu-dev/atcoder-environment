@@ -2,9 +2,22 @@
     "ac-libraryのインクルード": {
         "prefix": "atcoder",
         "body": [
+            "",
             "#include <atcoder/all>",
-            "using namespace atcoder;"
+            "using namespace atcoder;",
+            ""
         ]
+    },
+    "mintを定義する": {
+        "prefix": "modint",
+        "body": [
+            "",
+            "#include <atcoder/all>",
+            "using namespace atcoder;",
+            "using mint = modint998244353;",
+            ""
+        ],
+        "description": "mintを定義する"
     },
     "桁和関数": {
         "prefix": "ketawa",
