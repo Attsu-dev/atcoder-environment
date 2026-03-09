@@ -43,5 +43,22 @@
             "}"
         ],
         "description": "エラトステネスの篩"
+    },
+    "進数変換": {
+        "prefix": "shinsuu",
+        "body": [
+            "// n進数をm進数に変換する",
+            "string ntom(string S, ll n, ll m) {",
+            "  ll sum = stoll(S, nullptr, n);",
+            "  string res = \"\";",
+            "  do {",
+            "    ll num = sum % m;",
+            "    res = static_cast<char>(num + '0') + res;",
+            "    sum /= m;",
+            "  } while (sum);",
+            "  return res;",
+            "}"
+        ],
+        "description": "進数変換"
     }
 }
