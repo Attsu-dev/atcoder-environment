@@ -44,6 +44,14 @@ const ll INF = 1LL << 60;
 const int dx[4] = {1, 0, -1, 0};
 const int dy[4] = {0, 1, 0, -1};
 
+template <typename T, typename U>
+istream& operator>>(istream& is, pair<T, U>& p) {
+  return is >> p.first >> p.second;
+}
+template <typename T, typename U>
+ostream& operator<<(ostream& os, const pair<T, U>& p) {
+  return os << p.first << " " << p.second;
+}
 template <typename T>
 istream& operator>>(istream& is, vector<T>& v) {
   for (T& in : v)
@@ -55,14 +63,6 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
   for (int i = 0; i < (int)v.size(); i++)
     os << v[i] << (i + 1 != (int)v.size() ? " " : "");
   return os;
-}
-template <typename T, typename U>
-istream& operator>>(istream& is, pair<T, U>& p) {
-  return is >> p.first >> p.second;
-}
-template <typename T, typename U>
-ostream& operator<<(ostream& os, const pair<T, U>& p) {
-  return os << p.first << " " << p.second;
 }
 
 void print() { cout << '\n'; }
