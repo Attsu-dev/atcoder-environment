@@ -2,20 +2,16 @@
     "ac-libraryのインクルード": {
         "prefix": "atcoder",
         "body": [
-            "",
             "#include <atcoder/all>",
-            "using namespace atcoder;",
-            ""
+            "using namespace atcoder;"
         ]
     },
     "mintを定義する": {
         "prefix": "modint",
         "body": [
-            "",
             "#include <atcoder/all>",
             "using namespace atcoder;",
-            "using mint = modint998244353;",
-            ""
+            "using mint = modint998244353;"
         ],
         "description": "mintを定義する"
     },
@@ -30,5 +26,22 @@
             "}"
         ],
         "description": "整数xを10進数表記したときの各桁の和を返す"
+    },
+    "エラトステネスの篩": {
+        "prefix": "eratos",
+        "body": [
+            "VLL Eratosthenes(const ll N) {",
+            "  VB is_prime(N + 1, true);",
+            "  VLL P;",
+            "  for (int i = 2; i <= N; i++) {",
+            "    if (is_prime[i]) {",
+            "      for (int j = 2 * i; j <= N; j += i) is_prime[j] = false;",
+            "      P.emplace_back(i);",
+            "    }",
+            "  }",
+            "  return P;",
+            "}"
+        ],
+        "description": "エラトステネスの篩"
     }
 }
