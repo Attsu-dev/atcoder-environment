@@ -85,5 +85,25 @@
             ""
         ],
         "description": "座標圧縮"
+    },
+    "めぐる式二分探索": {
+        "prefix": "meguru",
+        "body": [
+            "auto isOK = [&](ll key) -> bool {",
+            "",
+            "};",
+            "",
+            "ll ok = -1;",
+            "ll ng = INF;",
+            "",
+            "while (abs(ok - ng) > 1) {",
+            "  ll mid = (ok + ng) / 2;",
+            "  if (isOK(mid))",
+            "    ok = mid;",
+            "  else",
+            "    ng = mid;",
+            "}"
+        ],
+        "description": "めぐる式二分探索"
     }
 }
