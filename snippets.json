@@ -89,11 +89,11 @@
     "めぐる式二分探索": {
         "prefix": "meguru",
         "body": [
-            "auto isOK = [&](ll key) -> bool {",
+            "auto isOK = [&](ll X) -> bool {",
             "",
             "};",
             "",
-            "ll ok = -1;",
+            "ll ok = 1;",
             "ll ng = INF;",
             "",
             "while (abs(ok - ng) > 1) {",
@@ -102,7 +102,9 @@
             "    ok = mid;",
             "  else",
             "    ng = mid;",
-            "}"
+            "}",
+            "",
+            "print(ok);"
         ],
         "description": "めぐる式二分探索"
     }
