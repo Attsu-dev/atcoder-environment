@@ -1,4 +1,4 @@
-alias g='g++ -std=c++23 -I ~/atcoder/ac-library -g -Wall -Wextra -Wshadow -fsanitize=address,undefined'
+alias g='g++ -std=c++23 -I ~/atcoder/ac-library -g -Wall -Wextra -fsanitize=address,undefined'
 
 function n() {
     cd /home/attsu/atcoder/workspace || return
