@@ -2,9 +2,7 @@
 #include <bits/stdc++.h>
 #include __FILE__
 
-void solve() {
-  
-}
+void solve() {}
 
 int main() {
   int T = 1;
@@ -40,7 +38,7 @@ using VVB = vector<VB>;
 #define rall(x) x.rbegin(), x.rend()
 
 const double PI = 3.141592653589793238;
-const ll INF = 1LL << 60;
+const ll INF = 2e18;
 const int dx[4] = {1, 0, -1, 0};
 const int dy[4] = {0, 1, 0, -1};
 
