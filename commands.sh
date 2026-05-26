@@ -5,14 +5,8 @@ function n() {
     cp /home/attsu/atcoder/library/template.cpp main.cpp
     rm -r test 2>/dev/null
 
-    echo "$1" > .problem_url
-
     oj d "$1"
     code --goto main.cpp:6:3
-}
-
-function open-problem() {
-    xdg-open "$(cat .problem_url)"
 }
 
 function t() {
