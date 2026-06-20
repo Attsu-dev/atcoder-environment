@@ -428,5 +428,43 @@
             "};"
         ],
         "description": "SortedMultiSet"
+    },
+    "ランレングス圧縮（数列）": {
+        "prefix": "runlength",
+        "body": [
+            "vector<PLL> run_length(const VLL& A) {",
+            "  vector<PLL> res;",
+            "  ll cnt = 1;",
+            "  rep(i, A.size()) {",
+            "    if ((i == A.size() - 1) || A[i] != A[i + 1]) {",
+            "      res.push_back({A[i], cnt});",
+            "      cnt = 1;",
+            "    } else {",
+            "      cnt++;",
+            "    }",
+            "  }",
+            "  return res;",
+            "}"
+        ],
+        "description": "ランレングス圧縮（数列）"
+    },
+    "ランレングス圧縮（文字列）": {
+        "prefix": "runlength",
+        "body": [
+            "vector<pair<char, ll>> run_length(string S) {",
+            "  vector<pair<char, ll>> res;",
+            "  ll cnt = 1;",
+            "  rep(i, S.size()) {",
+            "    if ((i == S.size() - 1) || S[i] != S[i + 1]) {",
+            "      res.push_back({S[i], cnt});",
+            "      cnt = 1;",
+            "    } else {",
+            "      cnt++;",
+            "    }",
+            "  }",
+            "  return res;",
+            "}"
+        ],
+        "description": "ランレングス圧縮（文字列）"
     }
 }
