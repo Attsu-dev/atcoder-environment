@@ -218,5 +218,42 @@
             "using SegGCD = segtree<ll, op_gcd, e_gcd>;"
         ],
         "description": "セグ木（最大公約数）"
+    },
+    "グラフ入力": {
+        "prefix": "readgraph",
+        "body": [
+            "vector<vector<int>> read_graph(int N, int M, bool dir = false) {",
+            "  vector<vector<int>> G(N);",
+            "  for (int i = 0; i < M; i++) {",
+            "    int u, v;",
+            "    cin >> u >> v;",
+            "    --u;",
+            "    --v;",
+            "    G[u].push_back(v);",
+            "    if (!dir) G[v].push_back(u);",
+            "  }",
+            "  return G;",
+            "}"
+        ],
+        "description": "グラフ入力"
+    },
+    "グラフ入力（重み付き）": {
+        "prefix": "readgraphweighted",
+        "body": [
+            "vector<vector<pair<int, ll>>> read_graph(int N, int M, bool dir = false) {",
+            "  vector<vector<pair<int, ll>>> G(N);",
+            "  for (int i = 0; i < M; i++) {",
+            "    int u, v;",
+            "    ll w;",
+            "    cin >> u >> v >> w;",
+            "    --u;",
+            "    --v;",
+            "    G[u].push_back({v, w});",
+            "    if (!dir) G[v].push_back({u, w});",
+            "  }",
+            "  return G;",
+            "}"
+        ],
+        "description": "グラフ入力（重み付き）"
     }
 }
