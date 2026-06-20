@@ -286,5 +286,28 @@
             "}"
         ],
         "description": "ダイクストラ"
+    },
+    "幅優先探索": {
+        "prefix": "bfs",
+        "body": [
+            "queue<int> q;",
+            "vector<int> dist(N, -1);",
+            "",
+            "dist[s] = 0;",
+            "q.push(s);",
+            "",
+            "while (!q.empty()) {",
+            "    int v = q.front();",
+            "    q.pop();",
+            "",
+            "    for (int to : G[v]) {",
+            "        if (dist[to] != -1) continue;",
+            "",
+            "        dist[to] = dist[v] + 1;",
+            "        q.push(to);",
+            "    }",
+            "}"
+        ],
+        "description": "幅優先探索"
     }
 }
