@@ -2,9 +2,7 @@
 #include <bits/stdc++.h>
 #include __FILE__
 
-void solve() {
-  
-}
+void solve() {}
 
 int main() {
   int T = 1;
@@ -104,19 +102,6 @@ vector<T> cumsum(const vector<T>& a) {
   vector<T> s(n + 1, 0);
   for (int i = 0; i < n; i++) s[i + 1] = s[i] + a[i];
   return s;
-}
-
-vector<vector<int> > read_graph(int N, int M, bool dir = false) {
-  vector<vector<int> > G(N);
-  for (int i = 0; i < M; i++) {
-    int u, v;
-    cin >> u >> v;
-    --u;
-    --v;
-    G[u].push_back(v);
-    if (!dir) G[v].push_back(u);
-  }
-  return G;
 }
 
 #endif
