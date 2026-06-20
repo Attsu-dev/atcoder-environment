@@ -23,7 +23,7 @@ struct Init {
     cout << setprecision(13);
   }
 } init;
-// clang-format off
+
 using ll = long long;
 using ull = unsigned long long;
 using VLL = vector<ll>;
@@ -37,12 +37,12 @@ using VVB = vector<VB>;
 #define rep(i, n) for (ll i = 0; i < ll(n); ++i)
 #define FOR(i, a, b) for (ll i = ll(a); i < ll(b); ++i)
 #define all(x) (x).begin(), (x).end()
-#define rall(x) x.rbegin(), x.rend()
+#define rall(x) (x).rbegin(), (x).rend()
 
 const double PI = 3.141592653589793238;
 const ll INF = 2e18;
-const int dx[4] = {1, 0, -1, 0};
-const int dy[4] = {0, 1, 0, -1};
+const int dx[] = {1, 0, -1, 0, 1, 1, -1, -1};
+const int dy[] = {0, 1, 0, -1, -1, 1, -1, 1};
 
 template <typename T, typename U>
 istream& operator>>(istream& is, pair<T, U>& p) {
@@ -54,8 +54,7 @@ ostream& operator<<(ostream& os, const pair<T, U>& p) {
 }
 template <typename T>
 istream& operator>>(istream& is, vector<T>& v) {
-  for (T& in : v)
-    is >> in;
+  for (T& in : v) is >> in;
   return is;
 }
 template <typename T>
@@ -65,9 +64,13 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
   return os;
 }
 
-void print() { cout << '\n'; }
+void print() {
+  cout << '\n';
+}
 template <typename T>
-void print(const T& t) { cout << t << '\n'; }
+void print(const T& t) {
+  cout << t << '\n';
+}
 template <typename Head, typename... Tail>
 void print(const Head& head, const Tail&... tail) {
   cout << head << " ";
@@ -103,12 +106,13 @@ vector<T> cumsum(const vector<T>& a) {
   return s;
 }
 
-vector<vector<int>> read_graph(int N, int M, bool dir = false) {
-  vector<vector<int>> G(N);
+vector<vector<int> > read_graph(int N, int M, bool dir = false) {
+  vector<vector<int> > G(N);
   for (int i = 0; i < M; i++) {
     int u, v;
     cin >> u >> v;
-    --u; --v;
+    --u;
+    --v;
     G[u].push_back(v);
     if (!dir) G[v].push_back(u);
   }
