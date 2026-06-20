@@ -485,5 +485,23 @@
             "}"
         ],
         "description": "ナップサックDP"
+    },
+    "素因数分解": {
+        "prefix": "prime_factor",
+        "body": [
+            "// <素因数、指数>のmapを返す",
+            "map<ll, ll> Prime_factor(ll n) {",
+            "  map<ll, ll> res;",
+            "  for (ll p = 2; p * p <= n; p++) {",
+            "    while (n % p == 0) {",
+            "      res[p]++;",
+            "      n /= p;",
+            "    }",
+            "  }",
+            "  if (n > 1) res[n]++;",
+            "  return res;",
+            "}"
+        ],
+        "description": "素因数分解"
     }
 }
