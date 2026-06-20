@@ -26,6 +26,13 @@ function to() {
     code --goto main.cpp:6:3
 }
 
+function zip2test() {
+    unzip "$HOME/downloads/samples-$1.zip" -d test
+    for f in test/*.ans;do
+        mv "$f" "${f%.ans}.out"
+    done
+}
+
 function save-lib() {
     local lib_path="/home/attsu/atcoder/library"
     local snippet_dest="/mnt/c/Users/atsus/AppData/Roaming/Code/User/snippets/cpp.json"
