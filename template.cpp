@@ -2,7 +2,9 @@
 #include <bits/stdc++.h>
 #include __FILE__
 
-void solve() {}
+void solve() {
+  
+}
 
 int main() {
   int T = 1;
