@@ -9,7 +9,7 @@
     "mintを定義する": {
         "prefix": "modint",
         "body": [
-            "#include <atcoder/all>",
+            "#include <atcoder/modint>",
             "using namespace atcoder;",
             "using mint = modint998244353;"
         ],
@@ -158,7 +158,7 @@
     "セグ木（総和）": {
         "prefix": "SegSUM",
         "body": [
-            "#include <atcoder/all>",
+            "#include <atcoder/segtree>",
             "using namespace atcoder;",
             "",
             "ll op_sum(ll a, ll b) {",
@@ -174,7 +174,7 @@
     "セグ木（最大値）": {
         "prefix": "SegMAX",
         "body": [
-            "#include <atcoder/all>",
+            "#include <atcoder/segtree>",
             "using namespace atcoder;",
             "",
             "ll op_max(ll a, ll b) {",
@@ -190,7 +190,7 @@
     "セグ木（最小値）": {
         "prefix": "SegMIN",
         "body": [
-            "#include <atcoder/all>",
+            "#include <atcoder/segtree>",
             "using namespace atcoder;",
             "",
             "ll op_min(ll a, ll b) {",
@@ -206,7 +206,7 @@
     "セグ木（最大公約数）": {
         "prefix": "SegGCD",
         "body": [
-            "#include <atcoder/all>",
+            "#include <atcoder/segtree>",
             "using namespace atcoder;",
             "",
             "ll op_gcd(ll a, ll b) {",
