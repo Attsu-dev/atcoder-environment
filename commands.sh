@@ -27,7 +27,8 @@ function to() {
 }
 
 function zip2test() {
-    unzip "$HOME/downloads/samples-$1.zip" -d test
+    unzip "$HOME/downloads/samples-$1.zip" -d test || return
+    rm "$HOME/downloads/samples-$1.zip"*
     for f in test/*.ans;do
         mv "$f" "${f%.ans}.out"
     done
