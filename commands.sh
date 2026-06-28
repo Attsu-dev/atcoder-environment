@@ -2,7 +2,7 @@ alias g='g++ -std=c++23 -I ~/atcoder/library -I ~/atcoder/ac-library -g -Wall -W
 
 function n() {
     cd /home/attsu/atcoder/workspace || return
-    cp /home/attsu/atcoder/library/template.cpp main.cpp
+    cp /home/attsu/atcoder/library/template/main.cpp main.cpp
     rm -r test 2>/dev/null
 
     oj d "$1"
