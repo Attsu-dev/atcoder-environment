@@ -6,7 +6,7 @@ function n() {
     rm -r test 2>/dev/null
 
     oj d "$1"
-    code --goto main.cpp:6:3
+    code --goto main.cpp:4:3
 }
 
 function t() {
