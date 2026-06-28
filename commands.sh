@@ -10,20 +10,21 @@ function n() {
 }
 
 function t() {
-    cat main.cpp | iconv -t sjis | clip.exe
-    g main.cpp || return
+    oj-bundle -I ~/atcoder/library/ main.cpp > submit.cpp 2>/dev/null || return
+    cat submit.cpp | iconv -t sjis | clip.exe
+    g submit.cpp || return
     oj t
 }
 
 function atcoder-start() {
     acc n "$1"
     cd "$1/a/" || return
-    code --goto main.cpp:6:3
+    code --goto main.cpp:4:3
 }
 
 function to() {
     cd "../$1/" || return
-    code --goto main.cpp:6:3
+    code --goto main.cpp:4:3
 }
 
 function zip2test() {
