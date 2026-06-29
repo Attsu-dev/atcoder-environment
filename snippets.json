@@ -123,5 +123,34 @@
             "using SegGCD = segtree<ll, op_gcd, e_gcd>;"
         ],
         "description": "セグ木（最大公約数）"
+    },
+    "グラフ入力": {
+        "prefix": "read_graph",
+        "body": [
+            "VVLL G(N);",
+            "rep(i, M) {",
+            "  ll u, v;",
+            "  cin >> u >> v;",
+            "  u--, v--;",
+            "  G[u].emplace_back(v);",
+            "  // G[v].emplace_back(u);",
+            "}"
+        ],
+        "description": "グラフ入力"
+    },
+    "グラフ入力（重み付き）": {
+        "prefix": "read_graph",
+        "body": [
+            "VVPLL G(N);",
+            "rep(i, M) {",
+            "  ll u, v, w;",
+            "  cin >> u >> v >> w;",
+            "  u--, v--;",
+            "  G[u].emplace_back(v, w);",
+            "  // G[v].emplace_back(u, w);",
+            "}",
+            ""
+        ],
+        "description": "グラフ入力（重み付き）"
     }
 }

@@ -13,6 +13,7 @@ using VS = vector<string>;
 using VB = vector<bool>;
 using VVB = vector<VB>;
 using VPLL = vector<PLL>;
+using VVPLL = vector<VPLL>;
 
 #define rep(i, n) for (ll i = 0; i < ll(n); ++i)
 #define FOR(i, a, b) for (ll i = ll(a); i < ll(b); ++i)
