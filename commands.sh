@@ -35,6 +35,36 @@ function zip2test() {
     done
 }
 
+function randomtest-init() {
+    cp /home/attsu/atcoder/library/template/generate.py .
+    cp main.cpp naive.cpp
+}
+
+function randomtest() {
+    local tests="${1:-1000}"
+
+    g main.cpp || return
+    g naive.cpp -o naive || return
+
+    for ((i = 0; i < tests; i++)); do
+        python3 generate.py "$i" > input.txt || return
+
+        ./a.out < input.txt > output.txt || return
+        ./naive < input.txt > expected.txt || return
+
+        if ! diff -u expected.txt output.txt > diff.txt; then
+            echo "WA at seed: $i"
+            echo "[input]"
+            cat input.txt
+            echo "[diff]"
+            cat diff.txt
+            return 1
+        fi
+    done
+
+    echo "Accepted: $tests tests"
+}
+
 function save-lib() {
     local lib_path="/home/attsu/atcoder/library"
     local snippet_dest="/mnt/c/Users/atsus/AppData/Roaming/Code/User/snippets/cpp.json"
