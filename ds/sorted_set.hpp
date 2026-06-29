@@ -11,11 +11,15 @@ class SortedSet {
  public:
   SortedSet(int MAX) : MAX(MAX), sz(0), fw(MAX), exists(MAX, false) {}
 
-  bool contains(int x) { return exists[x]; }
+  bool contains(int x) {
+    assert(0 <= x && x < MAX);
+    return exists[x];
+  }
 
   int size() { return sz; }
 
   bool add(int x) {
+    assert(0 <= x && x < MAX);
     if (exists[x]) return false;
     exists[x] = true;
     fw.add(x, 1);
@@ -24,6 +28,7 @@ class SortedSet {
   }
 
   bool erase(int x) {
+    assert(0 <= x && x < MAX);
     if (!exists[x]) return false;
     exists[x] = false;
     fw.add(x, -1);
@@ -32,6 +37,7 @@ class SortedSet {
   }
 
   int operator[](int k) {
+    assert(0 <= k && k < sz);
     int l = -1, r = MAX;
     while (r - l > 1) {
       int m = (l + r) / 2;
@@ -43,5 +49,8 @@ class SortedSet {
     return r;
   }
 
-  int order(int x) { return fw.sum(0, x); }
+  int order(int x) {
+    assert(0 <= x && x <= MAX);
+    return fw.sum(0, x);
+  }
 };
