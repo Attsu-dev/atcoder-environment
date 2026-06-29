@@ -12,6 +12,7 @@ using VD = vector<double>;
 using VS = vector<string>;
 using VB = vector<bool>;
 using VVB = vector<VB>;
+using VPLL = vector<PLL>;
 
 #define rep(i, n) for (ll i = 0; i < ll(n); ++i)
 #define FOR(i, a, b) for (ll i = ll(a); i < ll(b); ++i)
@@ -42,9 +43,7 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
   return os;
 }
 
-void print() {
-  cout << '\n';
-}
+void print() { cout << '\n'; }
 template <typename T>
 void print(const T& t) {
   cout << t << '\n';
@@ -72,9 +71,7 @@ bool chmin(T1& a, T2 b) {
   return c;
 }
 
-void YesNo(bool b) {
-  cout << (b ? "Yes" : "No") << '\n';
-}
+void YesNo(bool b) { cout << (b ? "Yes" : "No") << '\n'; }
 
 template <typename T>
 vector<T> cumsum(const vector<T>& a) {

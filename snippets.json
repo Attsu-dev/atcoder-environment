@@ -59,5 +59,69 @@
             "}"
         ],
         "description": "幅優先探索"
+    },
+    "セグ木（総和）": {
+        "prefix": "segSUM",
+        "body": [
+            "#include <atcoder/segtree>",
+            "using namespace atcoder;",
+            "",
+            "ll op_sum(ll a, ll b) {",
+            "  return a + b;",
+            "}",
+            "ll e_sum() {",
+            "  return 0;",
+            "}",
+            "using SegSUM = segtree<ll, op_sum, e_sum>;"
+        ],
+        "description": "セグ木（総和）"
+    },
+    "セグ木（最大値）": {
+        "prefix": "segMAX",
+        "body": [
+            "#include <atcoder/segtree>",
+            "using namespace atcoder;",
+            "",
+            "ll op_max(ll a, ll b) {",
+            "  return max(a, b);",
+            "}",
+            "ll e_max() {",
+            "  return -2e18;",
+            "}",
+            "using SegMAX = segtree<ll, op_max, e_max>;"
+        ],
+        "description": "セグ木（最大値）"
+    },
+    "セグ木（最小値）": {
+        "prefix": "segMIN",
+        "body": [
+            "#include <atcoder/segtree>",
+            "using namespace atcoder;",
+            "",
+            "ll op_min(ll a, ll b) {",
+            "  return min(a, b);",
+            "}",
+            "ll e_min() {",
+            "  return 2e18;",
+            "}",
+            "using SegMIN = segtree<ll, op_min, e_min>;"
+        ],
+        "description": "セグ木（最小値）"
+    },
+    "セグ木（最大公約数）": {
+        "prefix": "segGCD",
+        "body": [
+            "#include <atcoder/segtree>",
+            "using namespace atcoder;",
+            "",
+            "ll op_gcd(ll a, ll b) {",
+            "  return gcd(a, b);",
+            "}",
+            "ll e_gcd() {",
+            "  return 0;",
+            "}",
+            "using SegGCD = segtree<ll, op_gcd, e_gcd>;"
+        ],
+        "description": "セグ木（最大公約数）"
     }
 }
