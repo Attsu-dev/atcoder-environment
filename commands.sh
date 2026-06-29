@@ -52,12 +52,13 @@ function randomtest() {
         ./a.out < input.txt > output.txt || return
         ./naive < input.txt > expected.txt || return
 
-        if ! diff -u expected.txt output.txt > diff.txt; then
-            echo "WA at seed: $i"
+        if ! cmp -s expected.txt output.txt; then
             echo "[input]"
             cat input.txt
-            echo "[diff]"
-            cat diff.txt
+            echo "[output]"
+            cat output.txt
+            echo "[expected]"
+            cat expected.txt
             return 1
         fi
     done
