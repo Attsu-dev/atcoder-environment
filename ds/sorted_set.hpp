@@ -4,18 +4,18 @@
 
 class SortedSet {
   int MAX, sz;
-  atcoder::fenwick_tree<int> fw;
+  mutable atcoder::fenwick_tree<int> fw;
   vector<bool> exists;
 
 public:
   SortedSet(int MAX) : MAX(MAX), sz(0), fw(MAX), exists(MAX, false) {}
 
-  bool contains(int x) {
+  bool contains(int x) const {
     assert(0 <= x && x < MAX);
     return exists[x];
   }
 
-  int size() { return sz; }
+  int size() const { return sz; }
 
   bool add(int x) {
     assert(0 <= x && x < MAX);
@@ -37,7 +37,7 @@ public:
     return true;
   }
 
-  int operator[](int k) {
+  int operator[](int k) const {
     assert(0 <= k && k < sz);
     int l = -1, r = MAX;
     while (r - l > 1) {
@@ -50,7 +50,7 @@ public:
     return r;
   }
 
-  int order(int x) {
+  int order(int x) const {
     assert(0 <= x && x <= MAX);
     return fw.sum(0, x);
   }

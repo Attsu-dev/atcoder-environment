@@ -4,18 +4,18 @@
 
 class SortedMultiSet {
   int MAX, sz;
-  atcoder::fenwick_tree<int> fw;
+  mutable atcoder::fenwick_tree<int> fw;
   vector<int> cnt;
 
 public:
   SortedMultiSet(int MAX) : MAX(MAX), sz(0), fw(MAX), cnt(MAX, 0) {}
 
-  int count(int x) {
+  int count(int x) const {
     assert(0 <= x && x < MAX);
     return cnt[x];
   }
 
-  int size() { return sz; }
+  int size() const { return sz; }
 
   void add(int x) {
     assert(0 <= x && x < MAX);
@@ -44,7 +44,7 @@ public:
     return true;
   }
 
-  int operator[](int k) {
+  int operator[](int k) const {
     assert(0 <= k && k < sz);
     int l = -1, r = MAX;
     while (r - l > 1) {
@@ -57,7 +57,7 @@ public:
     return r;
   }
 
-  int order(int x) {
+  int order(int x) const {
     assert(0 <= x && x <= MAX);
     return fw.sum(0, x);
   }

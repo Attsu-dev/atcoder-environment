@@ -18,21 +18,21 @@ template <typename T> struct CombinationBase {
       inv_fact[i - 1] = inv_fact[i] * T(i);
   }
 
-  T nCr(ll n, ll r) {
+  T nCr(ll n, ll r) const {
     if (r < 0 || n < r)
       return T(0);
     assert(n < (ll)fact.size());
     return fact[n] * inv_fact[r] * inv_fact[n - r];
   }
 
-  T nPr(ll n, ll r) {
+  T nPr(ll n, ll r) const {
     if (r < 0 || n < r)
       return T(0);
     assert(n < (ll)fact.size());
     return fact[n] * inv_fact[n - r];
   }
 
-  T nHr(ll n, ll r) {
+  T nHr(ll n, ll r) const {
     if (n == 0 && r == 0)
       return T(1);
     return nCr(n + r - 1, r);

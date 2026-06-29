@@ -11,15 +11,15 @@ struct Compress {
     v.erase(unique(v.begin(), v.end()), v.end());
   }
 
-  int size() { return v.size(); }
+  int size() const { return v.size(); }
 
-  int to(const T& x) {
+  int to(const T& x) const {
     int i = lower_bound(v.begin(), v.end(), x) - v.begin();
     assert(i < size() && v[i] == x);
     return i;
   }
 
-  T from(int x) {
+  T from(int x) const {
     assert(0 <= x && x < (int)v.size());
     return v[x];
   }
