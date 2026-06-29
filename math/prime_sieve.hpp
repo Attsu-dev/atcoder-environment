@@ -56,4 +56,21 @@ public:
     }
     return res;
   }
+
+  vector<int> divisors(int x) const {
+    assert(1 <= x && x <= n);
+    vector<int> res{1};
+    for (auto [p, e] : factorize(x)) {
+      int sz = res.size();
+      int pow_p = 1;
+      for (int i = 0; i < e; i++) {
+        pow_p *= p;
+        for (int j = 0; j < sz; j++) {
+          res.emplace_back(res[j] * pow_p);
+        }
+      }
+    }
+    sort(all(res));
+    return res;
+  }
 };
