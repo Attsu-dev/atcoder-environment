@@ -65,6 +65,12 @@ function randomtest() {
     echo "Accepted: $tests tests"
 }
 
+function expand-ac-library() {
+    local file="${1:-submit.cpp}"
+    python3 ~/atcoder/ac-library/expander.py --lib ~/atcoder/ac-library/ "$file"
+    cat combined.cpp | iconv -t sjis | clip.exe
+}
+
 function save-lib() {
     local lib_path="/home/attsu/atcoder/library"
     local snippet_dest="/mnt/c/Users/atsus/AppData/Roaming/Code/User/snippets/cpp.json"
