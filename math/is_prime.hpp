@@ -1,7 +1,7 @@
 #pragma once
 
 // O(log n)
-inline bool is_prime(long long n) {
+bool is_prime(long long n) {
   if (n <= 1) return false;
   if (n == 2) return true;
   if (n % 2 == 0) return false;

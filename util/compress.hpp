@@ -11,11 +11,9 @@ struct Compress {
     v.erase(unique(v.begin(), v.end()), v.end());
   }
 
-  int size() const { return v.size(); }
+  int size() { return v.size(); }
 
-  int to(const T& x) const {
-    return lower_bound(v.begin(), v.end(), x) - v.begin();
-  }
+  int to(const T& x) { return lower_bound(v.begin(), v.end(), x) - v.begin(); }
 
-  T from(int x) const { return v[x]; }
+  T from(int x) { return v[x]; }
 };
