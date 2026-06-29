@@ -1,14 +1,13 @@
 #pragma once
-#include <atcoder/fenwicktree>
-using namespace atcoder;
 #include "base/template.hpp"
+#include <atcoder/fenwicktree>
 
 class SortedMultiSet {
   int MAX, sz;
-  fenwick_tree<int> fw;
+  atcoder::fenwick_tree<int> fw;
   vector<int> cnt;
 
- public:
+public:
   SortedMultiSet(int MAX) : MAX(MAX), sz(0), fw(MAX), cnt(MAX, 0) {}
 
   int count(int x) {
@@ -27,7 +26,8 @@ class SortedMultiSet {
 
   bool erase(int x) {
     assert(0 <= x && x < MAX);
-    if (cnt[x] == 0) return false;
+    if (cnt[x] == 0)
+      return false;
     cnt[x]--;
     fw.add(x, -1);
     sz--;
@@ -36,7 +36,8 @@ class SortedMultiSet {
 
   bool erase_all(int x) {
     assert(0 <= x && x < MAX);
-    if (cnt[x] == 0) return false;
+    if (cnt[x] == 0)
+      return false;
     fw.add(x, -cnt[x]);
     sz -= cnt[x];
     cnt[x] = 0;

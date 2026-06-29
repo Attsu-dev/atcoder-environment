@@ -1,14 +1,13 @@
 #pragma once
-#include <atcoder/fenwicktree>
-using namespace atcoder;
 #include "base/template.hpp"
+#include <atcoder/fenwicktree>
 
 class SortedSet {
   int MAX, sz;
-  fenwick_tree<int> fw;
+  atcoder::fenwick_tree<int> fw;
   vector<bool> exists;
 
- public:
+public:
   SortedSet(int MAX) : MAX(MAX), sz(0), fw(MAX), exists(MAX, false) {}
 
   bool contains(int x) {
@@ -20,7 +19,8 @@ class SortedSet {
 
   bool add(int x) {
     assert(0 <= x && x < MAX);
-    if (exists[x]) return false;
+    if (exists[x])
+      return false;
     exists[x] = true;
     fw.add(x, 1);
     sz++;
@@ -29,7 +29,8 @@ class SortedSet {
 
   bool erase(int x) {
     assert(0 <= x && x < MAX);
-    if (!exists[x]) return false;
+    if (!exists[x])
+      return false;
     exists[x] = false;
     fw.add(x, -1);
     sz--;
