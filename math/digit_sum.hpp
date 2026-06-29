@@ -1,8 +1,9 @@
 #pragma once
+#include "base/template.hpp"
 
 long long digit_sum(long long x) {
+  assert(x >= 0);
   long long res = 0;
-  if (x < 0) x = -x;
   while (x > 0) {
     res += x % 10;
     x /= 10;

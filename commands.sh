@@ -11,9 +11,9 @@ function n() {
 
 function t() {
     oj-bundle -I ~/atcoder/library/ main.cpp > submit.cpp 2>/dev/null || return
-    cat submit.cpp | iconv -t sjis | clip.exe
     g submit.cpp || return
     oj t
+    cat submit.cpp | iconv -t sjis | clip.exe
 }
 
 function atcoder-start() {
