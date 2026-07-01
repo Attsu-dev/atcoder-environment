@@ -85,6 +85,6 @@ vector<T> cumsum(const vector<T>& a) {
 auto _ = [] {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  cout << setprecision(15);
+  cout << fixed << setprecision(15);
   return 0;
 }();
