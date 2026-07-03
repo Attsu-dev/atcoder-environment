@@ -1,4 +1,4 @@
-alias g='g++ -std=c++23 -I ~/atcoder/library -I ~/atcoder/ac-library -g -Wall -Wextra -fsanitize=address,undefined'
+alias g='g++ -std=c++20 -I ~/atcoder/library -I ~/atcoder/ac-library -g -Wall -Wextra -fsanitize=address,undefined'
 
 function n() {
     cd /home/attsu/atcoder/workspace || return
@@ -13,7 +13,7 @@ function t() {
     oj-bundle -I ~/atcoder/library/ main.cpp > submit.cpp 2>/dev/null || return
     g submit.cpp || return
     oj t
-    cat submit.cpp | iconv -t sjis | clip.exe
+    # cat submit.cpp | iconv -t sjis | clip.exe
 }
 
 function atcoder-start() {
@@ -69,7 +69,7 @@ function randomtest() {
 function expand-ac-library() {
     local file="${1:-submit.cpp}"
     python3 ~/atcoder/ac-library/expander.py --lib ~/atcoder/ac-library/ "$file"
-    cat combined.cpp | iconv -t sjis | clip.exe
+    # cat combined.cpp | iconv -t sjis | clip.exe
 }
 
 function save-lib() {
