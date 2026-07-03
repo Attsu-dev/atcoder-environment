@@ -14,9 +14,7 @@ struct Compress {
   int size() const { return v.size(); }
 
   int to(const T& x) const {
-    int i = lower_bound(v.begin(), v.end(), x) - v.begin();
-    assert(i < size() && v[i] == x);
-    return i;
+    return lower_bound(v.begin(), v.end(), x) - v.begin();
   }
 
   T from(int x) const {
