@@ -13,7 +13,7 @@ function t() {
     oj-bundle -I ~/atcoder/library/ main.cpp > submit.cpp 2>/dev/null || return
     g submit.cpp || return
     oj t
-    # cat submit.cpp | iconv -t sjis | clip.exe
+    cat submit.cpp | iconv -t sjis | clip.exe
 }
 
 function atcoder-start() {
