@@ -16,6 +16,7 @@ using VPLL = vector<PLL>;
 using VVPLL = vector<VPLL>;
 
 #define rep(i, n) for (ll i = 0; i < ll(n); ++i)
+#define rrep(i, n) for (ll i = ll(n) - 1; i >= 0; --i)
 #define FOR(i, a, b) for (ll i = ll(a); i < ll(b); ++i)
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
