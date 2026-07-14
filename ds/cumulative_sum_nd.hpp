@@ -46,7 +46,7 @@ class CumulativeSumND {
     built = false;
   }
 
-  // 座標 p に value を加える。build() より前に呼ぶ。
+  // 座標 p に value を加える。
   void add(const VLL& p, const T& value) {
     assert(!built);
     prefix[point_index(p)] += value;
@@ -73,7 +73,6 @@ class CumulativeSumND {
       assert(0 <= l[d] && l[d] <= r[d] && r[d] <= shape[d]);
 
     T answer{};
-    // l と r の 2^n 個の組み合わせを包除原理で足し引きする。
     for (size_t mask = 0; mask < (size_t(1) << shape.size()); mask++) {
       size_t index = 0;
       int chosen_l = 0;
