@@ -25,20 +25,20 @@ const ll INF = 2e18;
 const int dx[] = {1, 0, -1, 0, 1, 1, -1, -1};
 const int dy[] = {0, 1, 0, -1, -1, 1, -1, 1};
 
-template <typename T, typename U>
+template <class T, class U>
 istream& operator>>(istream& is, pair<T, U>& p) {
   return is >> p.first >> p.second;
 }
-template <typename T, typename U>
+template <class T, class U>
 ostream& operator<<(ostream& os, const pair<T, U>& p) {
   return os << p.first << " " << p.second;
 }
-template <typename T>
+template <class T>
 istream& operator>>(istream& is, vector<T>& v) {
-  for (T& in : v) is >> in;
+  for (auto& in : v) is >> in;
   return is;
 }
-template <typename T>
+template <class T>
 ostream& operator<<(ostream& os, const vector<T>& v) {
   for (int i = 0; i < (int)v.size(); i++)
     os << v[i] << (i + 1 != (int)v.size() ? " " : "");
@@ -46,42 +46,30 @@ ostream& operator<<(ostream& os, const vector<T>& v) {
 }
 
 void print() { cout << '\n'; }
-template <typename T>
-void print(const T& t) {
+void print(const auto& t) {
   cout << t << '\n';
 }
-template <typename Head, typename... Tail>
-void print(const Head& head, const Tail&... tail) {
+void print(const auto& head, const auto&... tail) {
   cout << head << " ";
   print(tail...);
 }
-template <typename T>
+template <class T>
 void println(const vector<T>& v) {
   for (const auto& row : v) print(row);
 }
 
-template <typename T1, typename T2>
-bool chmax(T1& a, T2 b) {
+bool chmax(auto& a, auto b) {
   bool c = a < b;
   if (c) a = b;
   return c;
 }
-template <typename T1, typename T2>
-bool chmin(T1& a, T2 b) {
+bool chmin(auto& a, auto b) {
   bool c = a > b;
   if (c) a = b;
   return c;
 }
 
 void YesNo(bool b) { cout << (b ? "Yes" : "No") << '\n'; }
-
-template <typename T>
-vector<T> cumsum(const vector<T>& a) {
-  int n = a.size();
-  vector<T> s(n + 1, 0);
-  for (int i = 0; i < n; i++) s[i + 1] = s[i] + a[i];
-  return s;
-}
 
 auto _ = [] {
   ios::sync_with_stdio(false);
