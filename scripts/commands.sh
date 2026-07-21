@@ -77,8 +77,9 @@ function save-lib() {
     local snippet_dest="/mnt/c/Users/atsus/AppData/Roaming/Code/User/snippets/cpp.json"
 
     cp "$lib_path/snippets.json" "$snippet_dest"
+    source "$lib_path/scripts/commands.sh"
 
-    pushd "$lib_path" > /dev/null || return 1
+    pushd "$lib_path" > /dev/null
 
     git add .
     git commit -m "update"
