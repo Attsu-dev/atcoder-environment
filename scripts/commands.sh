@@ -10,7 +10,8 @@ function n() {
 }
 
 function t() {
-    oj-bundle -I ~/atcoder/library/ main.cpp > submit.cpp 2>/dev/null || return
+    oj-bundle -I ~/atcoder/library/ main.cpp > bundled.cpp 2>/dev/null || return
+    python3 ~/atcoder/workspace/cleaner.py < bundled.cpp > submit.cpp && rm bundled.cpp || return
     g submit.cpp || return
     oj t
     cat submit.cpp | iconv -t sjis | clip.exe
