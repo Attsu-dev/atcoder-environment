@@ -200,5 +200,12 @@
             ""
         ],
         "description": "グリッドダイクストラ"
+    },
+    "vector入力": {
+        "prefix": "cinv",
+        "body": [
+            "for (auto& x : $1) cin >> x;"
+        ],
+        "description": "vector入力"
     }
 }
