@@ -205,7 +205,7 @@
         "prefix": "cinv",
         "body": [
             "for (auto& x : $1) cin >> x;",
-            "$2"
+            "$0"
         ],
         "description": "vector入力"
     }
