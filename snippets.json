@@ -204,7 +204,8 @@
     "vector入力": {
         "prefix": "cinv",
         "body": [
-            "for (auto& x : $1) cin >> x;"
+            "for (auto& x : $1) cin >> x;",
+            "$2"
         ],
         "description": "vector入力"
     }
