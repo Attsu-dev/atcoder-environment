@@ -1,7 +1,7 @@
 #pragma once
 #include "base/template.hpp"
 
-// s[i] = a[0] + a[1] + ... + a[i - 1] となる累積和を返す。
+// 累積和
 template <class T>
 vector<T> cumsum(const vector<T>& a) {
   int n = a.size();
