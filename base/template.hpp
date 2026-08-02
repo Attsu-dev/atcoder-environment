@@ -23,7 +23,7 @@ using VVPLL = vector<vector<pair<ll, ll>>>;
 const ll INF = 2e18;
 const int dx[] = {1, 0, -1, 0, 1, 1, -1, -1};
 const int dy[] = {0, 1, 0, -1, -1, 1, -1, 1};
-void print(const auto& t) { cout << t << '\n'; }
+void print(const auto& x) { cout << x << '\n'; }
 void printv(const auto& v) { for (int i = 0, n = v.size(); i < n; ++i) cout << v[i] << " \n"[i + 1 == n]; if (v.empty()) cout << '\n'; }
 void printvv(const auto& vv) { for (const auto& v : vv) printv(v); }
 void YesNo(bool b) { cout << (b ? "Yes" : "No") << '\n'; }
