@@ -11,10 +11,10 @@ function n() {
 
 function t() {
     oj-bundle -I ~/atcoder/library/ main.cpp > bundled.cpp 2>/dev/null || return
-    python3 ~/atcoder/workspace/cleaner.py < bundled.cpp > submit.cpp && rm bundled.cpp || return
+    python3 ~/atcoder/library/scripts/cleaner.py < bundled.cpp > submit.cpp && rm bundled.cpp || return
+    cat submit.cpp | iconv -t sjis | clip.exe
     g submit.cpp || return
     oj t
-    cat submit.cpp | iconv -t sjis | clip.exe
 }
 
 function atcoder-start() {
